@@ -239,14 +239,18 @@ the new values to a *new image* to create a blurred version of the image.
 > filters produce other effects. For example, the filter
 >
 > `-1 -1 -1`
+>
 > `-1 17 -1`
+>
 > `-1 -1 -1`
 >
 > with a normalization factor of 9.0 will *sharpen* the image instead of blur
 > it. The filter
 >
 > `-1 0 1`
+>
 > `-1 0 1`
+>
 > `-1 0 1`
 >
 > with a normalization factor of 1.0 will perform *edge detection* and produce
