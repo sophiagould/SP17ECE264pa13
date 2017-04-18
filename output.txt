@@ -1,0 +1,45 @@
+Commit ID tagged for submission: 59cbe9031acecf6b8aa5e8454940732e93d685c9
+Submission graded at: 2017-04-17 23:59:34
+
+*****************************************************************************************************
+* [!] Please contact the person who made this commit if you beleive there are errors in the result. *
+* [!] In this case, it would be Alex: aionescu at purdue dot edu.                                   *
+* [!] Do not contact the other TA as they would not be able to help!                                *
+*****************************************************************************************************
+
+[*] Cleaning up...
+
+[*] Compiling with student's readImage/freeImage (25%)...
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror --combine bmp.c bmp-key.c -D WRITEIMAGE_OFF -D BLUR_OFF -c -o bmp.o
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror --combine filter.c filter-key.c -D WRITEIMAGE_OFF -D BLUR_OFF -c -o filter.o
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror --combine pa13.c -D WRITEIMAGE_OFF -D BLUR_OFF -c -o pa13.o
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror bmp.o filter.o pa13.o -o pa13
+0/540000 (0.000000 %) pixels different. Passed!
+Testing freeImage under valgrind...
+[*] There are 0 byte(s) leaked.
+[*] There are 0 error(s) detected by valgrind.
+
+[*] Compiling with student's writeImage (25%)...
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror --combine bmp.c bmp-key.c -D READIMAGE_OFF -D BLUR_OFF -c -o bmp.o
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror --combine filter.c filter-key.c -D READIMAGE_OFF -D BLUR_OFF -c -o filter.o
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror --combine pa13.c -D READIMAGE_OFF -D BLUR_OFF -c -o pa13.o
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror bmp.o filter.o pa13.o -o pa13
+/home/min/a/aionescu/ece264-grader-environment/ece264-grader/repositories/PA13-sophiagould/pa13-grader.sh: line 72: 25338 Aborted                 (core dumped) ./pa13 > /dev/null 2>&1
+0/540000 (0.000000 %) pixels different. Passed!
+
+[*] Compiling with student's blur (50%)...
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror --combine bmp.c bmp-key.c -D READIMAGE_OFF -D WRITEIMAGE_OFF -c -o bmp.o
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror --combine filter.c filter-key.c -D READIMAGE_OFF -D WRITEIMAGE_OFF -c -o filter.o
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror --combine pa13.c -D READIMAGE_OFF -D WRITEIMAGE_OFF -c -o pa13.o
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror bmp.o filter.o pa13.o -o pa13
+0/540000 (0.000000 %) pixels different. Passed!
+
+[*] Compiling student's code for extra credit (25%)...
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror --combine bmp.c bmp-key.c -D EXTRA_CREDIT -c -o bmp.o
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror --combine filter.c filter-key.c -D EXTRA_CREDIT -c -o filter.o
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror --combine pa13.c -D EXTRA_CREDIT -c -o pa13.o
+gcc -std=c99 -g -Wall -Wshadow --pedantic -Wunreachable-code -Wvla -Werror bmp.o filter.o pa13.o -o pa13
+[*] Test case 1/3
+0/540000 (0.000000 %) pixels different. Passed!
+[*] Test case 2/3
+25539/540000 (4.729444 %) pixels different. Failed!
