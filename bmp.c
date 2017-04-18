@@ -35,6 +35,7 @@ void freeImage(BMPImage * image) {
 	for(x = 0; x < image -> norm_height; x++){
 		free(image -> pixels[x]);
 	}
+	free(image-> pixels);
 	free(image);
 	
 // FILL IN
